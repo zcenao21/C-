@@ -13,5 +13,6 @@ how to make console program pause at the end:
 system("pause");
 ```
 
-VERY GOOD
 when it is very interesting
+
+i delete the main part
