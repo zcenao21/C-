@@ -12,3 +12,5 @@ how to make console program pause at the end:
 ```
 system("pause");
 ```
+
+VERY GOOD
