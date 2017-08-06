@@ -6,7 +6,7 @@
 - All the names defined by the standard library are in the **std** namespace.
 - **::** scope operator]
 - When you change your code, be sure to update the comments,too!
-- end-of-file indication: on Windows systems we enter an end-of-file by typing a control-z¡ªhold down the Ctrl key and press z¡ªfollowed by hitting either the Enter or Return key.
+- end-of-file indication: on Windows systems we enter an end-of-file by typing a control-z-hold down the Ctrl key and press z-followed by hitting either the Enter or Return key.
 
 ---
 how to make console program pause at the end:
