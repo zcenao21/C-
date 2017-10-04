@@ -1,7 +1,7 @@
 ### Literal
 - When we assign one of the nonbool arithmetic types to a bool object, the
 result is false if the value is 0 and true otherwise.
-- When we assign a bool to one of the other arithmetic types, the resulting
+- When we assign a bool to one of the other arithmeti-c types, the resulting
 value is 1 if the bool is true and 0 if the bool is false.
 - If we assign an out-of-range value to an object of unsigned type, the result is
 the remainder of the value modulo the number of values the target type can
@@ -32,7 +32,7 @@ with an underscore.
   3. Like Sales_item, classes we define usually begin with an uppercase letter.
   4. Identifiers with multiple words should visually distinguish each word, for
 example, student_loan or studentLoan, not studentloan.
-- int _; (correct expression)
+- int \_; (correct expression)
 ---
 ### compound types
 #### reference
@@ -42,7 +42,7 @@ example, student_loan or studentLoan, not studentloan.
 
 #### pointer
 - types must match when assigning address.
-- In declarations, & and * are used to form compound types. In expressions,
+- In declarations, & and \* are used to form compound types. In expressions,
 these same symbols are used to denote an operator(& means to get the address,* means to get dereference value).
 - the value stored in a pointer can be in one of four states:
   1. it can point to an object.
@@ -133,3 +133,63 @@ figure out the type for us by using the **auto** type specifier to specify the t
 auto i = 0, *p = &i; // ok: i is int and p is a pointer to int
 auto sz = 0, pi = 3.14; // error: inconsistent types for sz and pi
 ```
+- points type: **auto** ordinarily ignores top-level consts, low-level consts are kept:
+```
+int i = 0;
+const int ci = i, &cr = ci;
+auto b = ci; // b is an int (top-level const in ci is dropped)
+auto c = cr; // c is an int (cr is an alias for ci whose const is top-level)
+auto d = &i; // d is an int*(& of an int object is int*)
+auto e = &ci; // e is const int*(& of a const object is low-level const)
+const auto f = ci; // deduced type of ci is int; f has type const int
+```
+- reference type：when we ask for a reference to an auto-deduced type, top-level consts in the
+initializer are not ignored.
+```
+auto &g = ci; // g is a const int& that is bound to ci
+auto &h = 42; // error: we can't bind a plain reference to a literal
+const auto &j = 42; // ok: we can bind a const reference to a literal
+```
+- When we define several variables in the same statement, it is important to
+remember that a reference or pointer is part of a particular declarator and not part of
+the base type for the declaration. As usual, the initializers must provide consistent
+auto-deduced types:
+```
+auto k = ci, &l = i; // k is int; l is int&
+auto &m = ci, *p = &ci; // m is a const int&;p is a pointer to const int
+// error: type deduced from i is int; type deduced from &ci is const int
+auto &n = i, *p2 = &ci;
+```
+- The way decltype handles top-level const and references differs subtly from the way auto does. **decltype** returns the type of that variable, including top-level const and references:
+```
+decltype(f()) sum = x; // sum has whatever type f returns
+```
+It is worth noting that decltype is the only context in which a variable defined as
+a reference is not treated as a synonym for the object to which it refers.
+- the dereference operator is an example of an expression for
+which decltype returns a reference.
+```
+int i = 42, *p = &i;
+decltype(*p) c; // error: c is int& and must be initialized
+```
+- If we wrap the variable’s name in one or more sets of parentheses, **decltype** on such an expression yields a reference
+---
+### Struct
+- The names defined inside the class must be unique;The close curly that ends the class body must be followed by a semicolon.
+- Members without an initializer are default initialized.
+
+### heead file
+- difference between "" and <>: if the head file is included in the files that has been compiled by C++, we use <>; if the file is defined by ourselves, <> should be replace by "", or we may obtain some errors.
+
+----
+## summary
+- Each type defines the storage requirements and the operations that may be
+performed on objects of that type. The language provides a set of fundamental builtin
+types such as int and char, which are closely tied to their representation on the
+machine’s hardware. Types can be nonconst or const; a const object must be
+initialized and, once initialized, its value may not be changed. In addition, we can
+define compound types, such as pointers or references. A compound type is one that
+is defined in terms of another type.
+The language lets us define our own types by defining classes. The library uses the
+class facility to provide a set of higher-level abstractions such as the IO and string
+types.
