@@ -154,7 +154,7 @@ f(5.6); // calls void f(double, double)
   3. The **arithmetic conversions**, convert one arithmetic type to another. The rules define a hierarchy of type conversions in which operands to an operator are converted to the widest type.
   4. **Pointer Conversions**:</br>
 	 1. In most expressions, when we use an array, the array is automatically converted to a pointer to the first element in that array</br>
-   2. A constant integral value of 0 and the literal nullptr can be converted to any pointer type
+         2. A constant integral value of 0 and the literal nullptr can be converted to any pointer type
 	 3. a pointer to any nonconst type can be converted to void\*, and a pointer to any type can be converted to a const void\*
 	 4. an additional pointer conversion that applies to types related by inheritance.
 - Matches Requiring Promotion or Arithmetic Conversion
@@ -164,7 +164,7 @@ f(5.6); // calls void f(double, double)
   void ff(short);
   ff('a'); // char promotes to int; calls f(int)
 	```
- 2. All the arithmetic conversions are treated as equivalent to each other
+  2. All the arithmetic conversions are treated as equivalent to each other
  ```
  void manip(long);
  void manip(float);
