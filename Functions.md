@@ -161,15 +161,15 @@ f(5.6); // calls void f(double, double)
   1. it is important to remember that the small integral types always promote to int or to a larger integral type.
 	```
 	void ff(int);
-  void ff(short);
-  ff('a'); // char promotes to int; calls f(int)
+        void ff(short);
+        ff('a'); // char promotes to int; calls f(int)
 	```
   2. All the arithmetic conversions are treated as equivalent to each other
- ```
- void manip(long);
- void manip(float);
- manip(3.14); // error: ambiguous call
- ```
+  ```
+  void manip(long);
+  void manip(float);
+  manip(3.14); // error: ambiguous call
+  ```
 - Using Function Pointers:
  we can use a pointer to a function to call the function to which the pointer points. We can do so directly—there is no need to dereference the pointer
 - unlike what happens to parameters that have function type, the return type is not automatically converted to a pointer type.
