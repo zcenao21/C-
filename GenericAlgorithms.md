@@ -51,7 +51,7 @@ void fcn3()
 - Insert Iterator Operations
 ![InsertIteratorOperations](https://github.com/zcenao21/Photo/blob/master/InsertIteratorOperations.JPG?raw=true)
 - istream_iterator Operations and ostream_iterator Operations
-![IOStreamIterator]()
+![IOStreamIterator](https://github.com/zcenao21/Photo/blob/master/IOStreamIterator.JPG?raw=true)
 - useful way to initialize container
 ```
 istream_iterator<int> in_iter(cin), eof; // read ints from cin
