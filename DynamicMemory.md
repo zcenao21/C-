@@ -148,3 +148,4 @@ alloc.deallocate(p, n);
 ```
 - allocator Algorithms
 ![allocator Algorithms](https://github.com/zcenao21/Photo/blob/master/allocator%20Algorithms.JPG?raw=true)
+ 
