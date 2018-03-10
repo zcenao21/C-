@@ -7,10 +7,10 @@ not run time.
 - Each class controls how its members are initialized.
 - The base class is initialized first, and then the members of the derived class are initialized in the order in which they are declared in the class.
 - The declaration contains the class name but does not include its derivation list:
-```
-class Bulk_quote : public Quote; // error: derivation list can't appear here
-class Bulk_quote; // ok: right way to declare a derived class
-```
+  ```
+  class Bulk_quote : public Quote; // error: derivation list can't appear here
+  class Bulk_quote; // ok: right way to declare a derived class
+  ```
 - we can prevent a class from being used as a base by following the class name with **final**.
 - we must define every virtual function, regardless of whether it is used, because the compiler has no way to determine whether a virtual function is used.
 - A function that is virtual in a base class is implicitly virtual in its derived classes. When a derived class overrides a virtual, the parameters in the base and derived classes must match exactly.
@@ -34,19 +34,19 @@ the derived class—including other classes derived from the derived class—hav
 hides direct use of the base-class member.
 - Aside from overriding inherited virtual functions, a derived class usually should not reuse names defined in its base class.
 - The base member is hidden even if the functions have different parameter lists:
-```
-struct Base {
-    int memfcn();
-};
-struct Derived : Base {
-    int memfcn(int); // hides memfcn in the base
-};
-Derived d; Base b;
-b.memfcn(); // calls Base::memfcn
-d.memfcn(10); // calls Derived::memfcn
-d.memfcn(); // error: memfcn with no arguments is hidden
-d.Base::memfcn(); // ok: calls Base::memfcn
-```
+  ```
+  struct Base {
+      int memfcn();
+  };
+  struct Derived : Base {
+      int memfcn(int); // hides memfcn in the base
+  };
+  Derived d; Base b;
+  b.memfcn(); // calls Base::memfcn
+  d.memfcn(10); // calls Derived::memfcn
+  d.memfcn(); // error: memfcn with no arguments is hidden
+  d.Base::memfcn(); // ok: calls Base::memfcn
+  ```
 - a using declaration for a base-class member function adds all the overloaded instances of that function to the scope of the derived class.
 - Executing delete on a pointer to base that points to a derived object has undefined behavior if the base’s destructor is not virtual.
 - Destructors for base classes are an important exception to the rule of thumb that if a class needs a destructor, it also needs copy and assignment.
@@ -61,12 +61,12 @@ responsible for copying or moving the entire object, including base-class
 members.
 - unlike the constructors and assignment operators, a derived destructor is responsible only for destroying the resources allocated by the derived class.
 - Under the new standard, a derived class can reuse the constructors defined by its direct base class. A class cannot inherit the default, copy, and move constructors.
-```
-class Bulk_quote : public Disc_quote {
-  public:
-  using Disc_quote::Disc_quote; // inherit Disc_quote's constructors
-  double net_price(std::size_t) const;
-};
+  ```
+  class Bulk_quote : public Disc_quote {
+    public:
+    using Disc_quote::Disc_quote; // inherit Disc_quote's constructors
+    double net_price(std::size_t) const;
+  };
 ```
 - When we define a class as publicly inherited from another, the derived
 class should reflect “Is A” relationship and “Has A” relationship to the base class.
