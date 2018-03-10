@@ -18,9 +18,9 @@ case ival: // error: nonconstant as case label
 - 	The **goto** and the labeled statement to which it transfers control must be in the same function.
 - As with a **switch** statement, a **goto** cannot transfer control from a point where an
 initialized variable is out of scope to a point where that variable is in scope:
-```
-goto end;
-int ix = 10; // error: goto bypasses an initialized variable definition end:
-// error: code here could use ix but the goto bypassed its declaration
-ix = 42;
-```
+  ```
+  goto end;
+  int ix = 10; // error: goto bypasses an initialized variable definition end:
+  // error: code here could use ix but the goto bypassed its declaration
+  ix = 42;
+  ```
