@@ -67,6 +67,5 @@ members.
     using Disc_quote::Disc_quote; // inherit Disc_quote's constructors
     double net_price(std::size_t) const;
   };
-```
-- When we define a class as publicly inherited from another, the derived
-class should reflect “Is A” relationship and “Has A” relationship to the base class.
+```  
+- When we define a class as publicly inherited from another, the derived class should reflect “Is A” relationship and “Has A” relationship to the base class.
