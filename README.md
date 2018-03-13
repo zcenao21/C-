@@ -31,7 +31,7 @@ Chapter 14: [Overloaded Operations and Conversions](Overloaded-operators-and-con
 
 Chapter 15: [Object-Oriented Programming](Object-oriented-programming.md)
 
-Chapter 16: learning...
+Chapter 16: [Templates and Generic Programming](Templates-and-Generic-Programming.md)
 
 Chapter 17: 
 
