@@ -33,7 +33,7 @@ Chapter 15: [Object-Oriented Programming](Object-oriented-programming.md)
 
 Chapter 16: [Templates and Generic Programming](Templates-and-Generic-Programming.md)
 
-Chapter 17: 
+Chapter 17: [Specialized Library Facilities](Specialized-Library-Facilities.md)
 
 Chapter 18: 
 
