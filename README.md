@@ -35,6 +35,6 @@ Chapter 16: [Templates and Generic Programming](Templates-and-Generic-Programmin
 
 Chapter 17: [Specialized Library Facilities](Specialized-Library-Facilities.md)
 
-Chapter 18: 
+Chapter 18: [Tools for Large Programs](Tools-for-Large-Programs.md)
 
-Chapter 19: 
+Chapter 19: [Specialized Tools and Techniques](Specialized-Tools-and-Techniques.md)
