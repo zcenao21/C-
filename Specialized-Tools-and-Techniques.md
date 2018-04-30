@@ -40,7 +40,7 @@ dynamic_cast<type&&>(e)
 - Performing a dynamic_cast in a condition ensures that the cast and test of its result are done in a single expression.
 - A **typeid** expression has the form **typeid(e)** where **e** is any expression or a type name. The result of a **typeid** operation is a reference to a **const** object of a library type named **type_info**, or a type publicly derived from **type_info**.
 - Operations on type_info
-![Operations on type_info](https://github.com/zcenao21/Photo/blob/master/Operations-on-type_info.PNG?raw=true)
+![Operations on type_info](https://github.com/zcenao21/Cpp/blob/master/photo/Operations-on-type_info.PNG?raw=true)
 - The only way to create
 a type_info object is through the typeid operator.
 
