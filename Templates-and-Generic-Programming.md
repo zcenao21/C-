@@ -90,7 +90,7 @@ auto fcn(It beg, It end) -> decltype(*beg)
 }
 ```
 - Standard Type Transformation Templates
-![Standard Type Transformation Templates](https://github.com/zcenao21/Photo/blob/master/Standard%20Type%20Transformation%20Templates.PNG?raw=true)
+![Standard Type Transformation Templates](https://github.com/zcenao21/Cpp/blob/master/photo/Standard%20Type%20Transformation%20Templates.PNG?raw=true)
 - Using **remove_reference** and a trailing return with **decltype**, we can write our function to return a copy of an element’s value:
 ```
 template <typename It> auto fcn2(It beg, It end) ->
