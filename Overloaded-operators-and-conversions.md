@@ -9,7 +9,7 @@ int operator+(int, int);
 ```
 This restriction means that we cannot change the meaning of an operator when
 applied to operands of built-in type.
-- ![Operators](https://github.com/zcenao21/Photo/blob/master/Operators.JPG?raw=true)
+- ![Operators](https://github.com/zcenao21/Cpp/blob/master/photo/Operators.JPG?raw=true)
 - An overloaded operator has the same precedence and associativity as the corresponding built-in operator.
 - Ordinarily, the **comma**, **address-of**, logical **AND**, and logical **OR** operators should not be overloaded.
 - Those operations with a logical mapping to an operator are good candidates
@@ -47,10 +47,10 @@ number or types of their parameters.
 for_each(vs.begin(), vs.end(), PrintString(cerr, '\n'));
 ```
 - Classes generated from a lambda expression have a deleted default constructor, deleted assignment operators, and a default destructor. Whether the class has a defaulted or deleted copy/move constructor depends in the usual ways on the types of the captured data members.
-- ![Library Function Objects](https://github.com/zcenao21/Photo/blob/master/Library%20Function%20Objects.JPG?raw=true)
+- ![Library Function Objects](https://github.com/zcenao21/Cpp/blob/master/photo/Library%20Function%20Objects.JPG?raw=true)
 - It is also worth noting that the associative containers use less<key_type> to order their elements. As a result, we can define a set of pointers or use a pointer as the key in a map without specifying less directly.
 - C++ has several kinds of callable objects: functions and pointers to functions, lambdas , objects created by bind, and classes that overload the function-call operator.
-- ![Operations on function](https://github.com/zcenao21/Photo/blob/master/Operations%20on%20function.JPG?raw=true)
+- ![Operations on function](https://github.com/zcenao21/Cpp/blob/master/photo/Operations%20on%20function.JPG?raw=true)
 - We cannot (directly) store the name of an overloaded function in an object of type
 function.
 - A conversion function must be a member function, may not specify a return type, and must have an empty parameter list. The function usually should be const.
