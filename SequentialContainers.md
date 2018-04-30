@@ -1,5 +1,5 @@
 - Sequential Container Types
-![a](https://github.com/zcenao21/Photo/blob/master/SequentialContainer.PNG?raw=true)
+![a](https://github.com/zcenao21/Cpp/blob/master/photo/SequentialContainer.PNG?raw=true)
 - The library containers almost
 certainly perform as well as (and usually better than) even the most carefully
 crafted alternatives. Modern C++ programs should use the library containers
@@ -16,9 +16,9 @@ Unless you have a reason to use another container, use a vector.
     1. First, decide whether you actually need to add elements in the middle of a container. It is often easier to append to a vector and then call the library sort function to reorder the container when you’re done with input.
     2. If you must insert into the middle, consider using a list for the input phase. Once the input is complete, copy the list into a vector.
 - When write access is not needed, use **cbegin** and **cend**.
-- Container Operations ![a](https://github.com/zcenao21/Photo/blob/master/ContainerOperations.PNG?raw=true)
+- Container Operations ![a](https://github.com/zcenao21/Cpp/blob/master/photo/ContainerOperations.PNG?raw=true)
 - Defining and Initializing Containers
-![b](https://github.com/zcenao21/Photo/blob/master/DefiningandIntializingContainer.PNG?raw=true)
+![b](https://github.com/zcenao21/Cpp/blob/master/photo/DefiningandIntializingContainer.PNG?raw=true)
 - There are two ways to create a new container as a copy of another one: We can directly copy the container, or (excepting array) we can copy a range of elements denoted by a pair of iterators.
 - To create a container as a copy of another container, the container and element types must match. When we pass iterators, there is no requirement that the container types be identical.
 ```
@@ -76,10 +76,10 @@ slist1.assign(10, "Hiya!"); // ten elements; each one is Hiya !
 - Excepting **array**, **swap** does not copy, delete, or insert any elements and is guaranteed to run in constant time.
 - Unlike how **swap** behaves for the other containers, swapping two arrays does exchange the elements. As a result, swapping two **arrays** requires time proportional to the number of elements in the **array**.
 - Container Assignment Operations
-![d](https://github.com/zcenao21/Photo/blob/master/ContainerAssignment.PNG?raw=true)
+![d](https://github.com/zcenao21/Cpp/blob/master/photo/ContainerAssignment.PNG?raw=true)
 - Every container type supports the equality operators (== and !=); all the containers except the unordered associative containers also support the relational operators (>,>=, <, <=). The right- and left-hand operands must be the same kind of container and must hold elements of the same type.
 - Operations That Add Elements to a Sequential Container
-![e](https://github.com/zcenao21/Photo/blob/master/AddElementToSequentialContainer.PNG?raw=true)
+![e](https://github.com/zcenao21/Cpp/blob/master/photo/AddElementToSequentialContainer.PNG?raw=true)
 - A deque
 guarantees constant-time insert and delete of elements at the beginning and end of the container. As with vector, inserting elements other than at the front or back of a deque is a potentially expensive operation.
 - inserting anywhere but at the end of a vector might be slow.
@@ -95,16 +95,16 @@ c.push_back("978-0590353403", 25, 15.99);
 c.push_back(Sales_data("978-0590353403", 25, 15.99));
 ```
 - Operations to Access Elements in a Sequential Container
-![c](https://github.com/zcenao21/Photo/blob/master/AccessElement.PNG?raw=true)
+![c](https://github.com/zcenao21/Cpp/blob/master/photo/AccessElement.PNG?raw=true)
 - The members that access elements in a container (i.e., **front**, **back**, **subscript**, and **at**) return references.
 - Using an out-of-range value for an index is a serious programming error, but one that
 the compiler will not detect. If we want to ensure that our index is valid, we can use the at member instead. The at member acts like the subscript operator, but if the index is invalid, at throws an out_of_range exception.
 - **erase** Operations on Sequential Containers
-![a](https://github.com/zcenao21/Photo/blob/master/EraseOperations.PNG?raw=true)
+![a](https://github.com/zcenao21/Cpp/blob/master/photo/EraseOperations.PNG?raw=true)
 - Operations to Insert or Remove Elements in a forward_list
-![a](https://github.com/zcenao21/Photo/blob/master/OperationsForwardList.PNG?raw=true)
+![a](https://github.com/zcenao21/Cpp/blob/master/photo/OperationsForwardList.PNG?raw=true)
 - Sequential Container Size Operations
-![a](https://github.com/zcenao21/Photo/blob/master/SequentialContainerResize.JPG?raw=true)
+![a](https://github.com/zcenao21/Cpp/blob/master/photo/SequentialContainerResize.JPG?raw=true)
 - After an operation that adds elements to a container
   - Iterators, pointers, and references to a vector or string are invalid if the container was reallocated. If no reallocation happens, indirect references to elements before the insertion remain valid; those to elements after the insertion are invalid.
   - Iterators, pointers, and references to a deque are invalid if we add elements anywhere but at the front or back. If we add at the front or back, iterators are invalidated, but references and pointers to existing elements are not.
@@ -114,17 +114,17 @@ the compiler will not detect. If we want to ensure that our index is valid, we c
   - All other iterators, references, or pointers to a deque are invalidated if the removed elements are anywhere but the front or back. If we remove elements at the back of the deque, the off-the-end iterator is invalidated but other iterators, references, and pointers are unaffected; they are also unaffected if we remove from the front.
   - All other iterators, references, or pointers to a vector or string remain valid for elements before the removal point. Note: The off-the-end iterator is always invalidated when we remove elements.
 - Don’t cache the iterator returned from **end()** in loops that insert or delete elements in a **deque**, **string**, or **vector**.
-- ![a](https://github.com/zcenao21/Photo/blob/master/ContainerSizeManagement.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/ContainerSizeManagement.JPG?raw=true)
 - Additional Ways to Construct **string** s
-![b](https://github.com/zcenao21/Photo/blob/master/AdditionalConstructString.JPG?raw=true)
-- ![a](https://github.com/zcenao21/Photo/blob/master/SubString.JPG?raw=true)
+![b](https://github.com/zcenao21/Cpp/blob/master/photo/AdditionalConstructString.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/SubString.JPG?raw=true)
 - Operations to Modify **string** s
-![a](https://github.com/zcenao21/Photo/blob/master/ModifyStrings.JPG?raw=true)
-- ![a](https://github.com/zcenao21/Photo/blob/master/stringSearchOperations.JPG?raw=true)
+![a](https://github.com/zcenao21/Cpp/blob/master/photo/ModifyStrings.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/stringSearchOperations.JPG?raw=true)
 - The string search functions return string::size_type, which is an unsigned type. As a result, it is a bad idea to use an int, or other signed type, to hold the return from these functions
-- ![a](https://github.com/zcenao21/Photo/blob/master/CompareString.JPG?raw=true)
-- ![a](https://github.com/zcenao21/Photo/blob/master/ConvertStringToNumber.JPG?raw=true)
-- ![a](https://github.com/zcenao21/Photo/blob/master/OperationsandTypesCommonTtotheContainerAdaptors.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/CompareString.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/ConvertStringToNumber.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/OperationsandTypesCommonTtotheContainerAdaptors.JPG?raw=true)
 - By default both stack and queue are implemented in terms of deque, and a
 priority_queue is implemented on a vector. We can override the default
 container type by naming a sequential container as a second type argument when we create the adaptor:
@@ -137,5 +137,5 @@ stack<string, vector<string>> str_stk2(svec);
 - All adaptors:cannot bebuilt on an **array**,**forward_list**.  
 **queue**:cannot bebuilt on a **vector**  
 **priority_queue**:cannot bebuilt on a **list**
-- ![a](https://github.com/zcenao21/Photo/blob/master/StackOperationsAddition.JPG?raw=true )
-- **queue**, **priority_queue** Operations in Addition to Table 9.17 ![a](https://github.com/zcenao21/Photo/blob/master/QueuePriorityQueueAddition.JPG?raw=true)
+- ![a](https://github.com/zcenao21/Cpp/blob/master/photo/StackOperationsAddition.JPG?raw=true )
+- **queue**, **priority_queue** Operations in Addition to Table 9.17 ![a](https://github.com/zcenao21/Cpp/blob/master/photo/QueuePriorityQueueAddition.JPG?raw=true)
