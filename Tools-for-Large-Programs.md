@@ -10,7 +10,7 @@
 - **catch-all** handlers, have the form **catch(...)**. A **catch-all** clause matches any type of exception.
 - If a **catch(...)** is used in combination with other **catch** clauses, it must be last. Any **catch** that follows a catch-all can never be matched.
 - Standard exception Class Hierarchy
-![Standard exception Class Hierarchy](https://github.com/zcenao21/Photo/blob/master/Standard-exception-Class-Hierarchy.PNG?raw=true)
+![Standard exception Class Hierarchy](https://github.com/zcenao21/Cpp/blob/master/photo/Standard-exception-Class-Hierarchy.PNG?raw=true)
 - A function try block lets us associate a group of catch clauses with the initialization phase of a constructor
 ```
 template <typename T>
