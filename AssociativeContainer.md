@@ -1,5 +1,5 @@
 - Associative Container Types
-![Associative Container Types](https://github.com/zcenao21/Photo/blob/master/AssociativeContainerTypes.JPG?raw=true)
+![Associative Container Types](https://github.com/zcenao21/Cpp/blob/master/photo/AssociativeContainerTypes.JPG?raw=true)
 - The associative container iterators are bidirectional
 - When we initialize a map, we have to supply both the key and the value. We wrap
 each key–value pair inside curly braces:
