@@ -3,9 +3,9 @@ of where they are created; they exist until they are explicitly freed.
 - Static memory is used for local
 static objects, for class static data members, and for variables defined outside any function.
 - Operations Common to shared_ptr and unique_ptr
-![OperationsCommontoshared_ptrandunique_ptr](https://github.com/zcenao21/Photo/blob/master/OperationsCommontoshared_ptrandunique_ptr.JPG?raw=true)
+![OperationsCommontoshared_ptrandunique_ptr](https://github.com/zcenao21/Cpp/blob/master/photo/OperationsCommontoshared_ptrandunique_ptr.JPG?raw=true)
 - Operations Specific to shared_ptr  
-![OperationsSpecifictoshared_ptr](https://github.com/zcenao21/Photo/blob/master/OperationsSpecifictoshared_ptr.JPG?raw=true)
+![OperationsSpecifictoshared_ptr](https://github.com/zcenao21/Cpp/blob/master/photo/OperationsSpecifictoshared_ptr.JPG?raw=true)
 - If you put shared_ptrs in a container, and you subsequently need to use some, but not all, of the elements, remember to erase the elements you no longer need.
 - Programs tend to use dynamic memory for one of three purposes:
   1. They don’t know how many objects they’ll need
@@ -25,7 +25,7 @@ pointers) exists until it is explicitly freed.
 - A **dangling pointer** is one that refers to memory that once held an
 object but no longer does so.
 - Other Ways to Define and Change shared_ptrs
-![Other Ways to Define and Change shared_ptrs](https://github.com/zcenao21/Photo/blob/master/Other%20Ways%20to%20Define%20and%20Change%20shared_ptrs.JPG?raw=true)
+![Other Ways to Define and Change shared_ptrs](https://github.com/zcenao21/Cpp/blob/master/photo/Other%20Ways%20to%20Define%20and%20Change%20shared_ptrs.JPG?raw=true)
 - The smart pointer constructors that take pointers are **explicit**;we must use the direct form of initialization to initialize a smart pointer:
 ```
 shared_ptr<int> p1 = new int(1024); // error: must use direct initialization
@@ -68,9 +68,9 @@ p2.release(); // WRONG: p2 won't free the memory and we've lost the pointer
 auto p = p2.release(); // ok, but we must remember to delete(p)
 ```
 - unique_ptr Operations
-![unique_ptr Operations](https://github.com/zcenao21/Photo/blob/master/unique_ptr%20Operations.JPG?raw=true)
+![unique_ptr Operations](https://github.com/zcenao21/Cpp/blob/master/photo/unique_ptr%20Operations.JPG?raw=true)
 - weak_ptrs
-![weak_ptrs](https://github.com/zcenao21/Photo/blob/master/weak_ptrs.JPG?raw=true)
+![weak_ptrs](https://github.com/zcenao21/Cpp/blob/master/photo/weak_ptrs.JPG?raw=true)
 - Binding a weak_ptr to a shared_ptr does not change the reference count of that shared_ptr.
 - Because the object might no longer exist, we cannot use a weak_ptr to access its object directly. To access that object, we must call lock.
 ```
@@ -109,7 +109,7 @@ unique_ptr<int[]> up(new int[10]);
 up.release(); // automatically uses delete[] to destroy its pointer
 ```
 - unique_ptrs to Arrays
-![unique_ptrs to Arrays](https://github.com/zcenao21/Photo/blob/master/unique_ptrs%20to%20Arrays.JPG?raw=true)
+![unique_ptrs to Arrays](https://github.com/zcenao21/Cpp/blob/master/photo/unique_ptrs%20to%20Arrays.JPG?raw=true)
 - If we want to use a shared_ptr to manage a dynamic array, we
 must provide our own deleter:
 ```
@@ -123,7 +123,7 @@ for (size_t i = 0; i != 10; ++i)
 *(sp.get() + i) = i; // use get to get a built-in pointer
 ```
 - Standard allocator Class and Customized Algorithms
-![Standard allocator Class and Customized Algorithms](https://github.com/zcenao21/Photo/blob/master/Standard%20allocator%20Class%20and%20Customized%20Algorithms.JPG?raw=true)
+![Standard allocator Class and Customized Algorithms](https://github.com/zcenao21/Cpp/blob/master/photo/Standard%20allocator%20Class%20and%20Customized%20Algorithms.JPG?raw=true)
 - how to use allocator
 ```
 allocator<string> alloc; // object that can allocate strings
@@ -147,5 +147,5 @@ alloc.destroy(--q); // free the strings we actually allocated
 alloc.deallocate(p, n);
 ```
 - allocator Algorithms
-![allocator Algorithms](https://github.com/zcenao21/Photo/blob/master/allocator%20Algorithms.JPG?raw=true)
+![allocator Algorithms](https://github.com/zcenao21/Cpp/blob/master/photo/allocator%20Algorithms.JPG?raw=true)
  
